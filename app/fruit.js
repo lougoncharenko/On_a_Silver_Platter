@@ -17,7 +17,7 @@ class Fruit {
     }
 
     toString () {
-        console.log(`${this.fruit} is tasty!`)
+        return (`${this.fruit} is tasty!`)
     }
 }
 
