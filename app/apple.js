@@ -15,9 +15,12 @@ class Apple extends Fruit {
         if (ammount % 1 === 0 && ammount > 0){
           this.ammount= ammount;
         } else {
-            throw `${ammount} is not a whole number greater than zero`
+            throw `${ammount} is not a whole number greater than zero`;
         }
+    }
 
+    eat() {
+        return `Customer bought ${this.ammount} ${this.fruit}s to eat`
     }
 }
 
