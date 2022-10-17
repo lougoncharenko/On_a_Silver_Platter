@@ -36,6 +36,10 @@ class Cheese {
         }    
     }
 
+    toString(){
+        
+    }
+
 }
 
 module.exports = Cheese; 
