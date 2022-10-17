@@ -1,6 +1,7 @@
 //import class
 const Apple = require('../app/apple');
 const Banana = require('../app/banana');
+const Cheese = require('../app/cheese');
 
 describe('Apple', () => {
     const consoleSpy = jest.spyOn(console, 'log');
@@ -52,6 +53,18 @@ describe('Banana', () => {
         expect(banana.eat()).toBe('You eat a banana')
 
     })
+});
+
+describe('Cheese', () => {
+    const consoleSpy = jest.spyOn(console, 'log');
+  
+    afterEach(() => {
+      consoleSpy.mockClear();
+    });
+
+test('', () => {
+
+})
 });
 
 
