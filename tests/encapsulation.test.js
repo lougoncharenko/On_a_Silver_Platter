@@ -64,12 +64,43 @@ describe('Cheese', () => {
       consoleSpy.mockClear();
     });
 
-    test('setAmmount will return a number if number is not a decimal or negative number', () => {
+    test('setCheese will return if a valid string', () => {
         const muenster = new Cheese();
         muenster.setCheese('muenster')
 
         expect(muenster.getCheese()).toBe('muenster');
     })
+
+    test('setCheese will throw error if not a valid string', () => {
+        const muenster = new Cheese();
+
+
+        expect(() => muenster.setCheese(25)).toThrow('25 is not a valid string');
+    })
+
+
+    test('setIsSmoked will return true or false if input is a boolean', () => {
+        const muenster = new Cheese();
+        muenster.setIsSmoked(true);
+
+        expect(muenster.getIsSmoked()).toBe(true);
+    })
+
+    test('setIsSmoked will return true or false if input is a boolean', () => {
+        const muenster = new Cheese();
+        muenster.setIsSmoked(false);
+
+        expect(muenster.getIsSmoked()).toBe(false);
+    })
+
+
+    test('setIsSmoked will throw an error if input is not a boolean', () => {
+        const muenster = new Cheese();
+       
+        expect(() => muenster.setIsSmoked('hello')).toThrow('hello is not a boolean');
+    })
+
+
 
 });
 
