@@ -2,6 +2,7 @@
 const Fruit = require('../app/fruit');
 const Apple = require('../app/apple');
 const Cheese = require('../app/cheese');
+const Sausage = require('../app/sausage');
 
 //Tests fruit.js
 describe('Fruit', () => {
@@ -100,7 +101,50 @@ describe('Cheese', () => {
         expect(() => muenster.setIsSmoked('hello')).toThrow('hello is not a boolean');
     })
 
+});
 
+//tests Sausage.js
+describe('Sausage', () => {
+    const consoleSpy = jest.spyOn(console, 'log');
+  
+    afterEach(() => {
+      consoleSpy.mockClear();
+    });
+
+    test('setSausage will return if a valid string', () => {
+        const brautz = new Sausage();
+        brautz.setSausage('brautz')
+
+        expect(brautz.getSausage()).toBe('brautz')
+    })
+
+    test('setSausage will throw error if not a valid string', () => {
+        const brautz = new Sausage();
+
+        expect(() => brautz.setSausage(true)).toThrow('true is not a valid string');
+    })
+
+
+    test('setIsSmoked will return true or false if input is a boolean', () => {
+        const brautz = new Sausage();
+        brautz.setIsSmoked(true);
+
+        expect(brautz.getIsSmoked()).toBe(true);
+    })
+
+    test('setIsSmoked will return true or false if input is a boolean', () => {
+        const brautz = new Sausage();
+        brautz.setIsSmoked(false);
+
+        expect(brautz.getIsSmoked()).toBe(false);
+    })
+
+
+    test('setIsSmoked will throw an error if input is not a boolean', () => {
+        const brautz = new Sausage();
+       
+        expect(() => brautz.setIsSmoked('hello')).toThrow('hello is not a boolean');
+    })
 
 });
 
