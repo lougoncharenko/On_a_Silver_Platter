@@ -28,6 +28,14 @@ class Cheese {
           }
     }
 
+    eat(){
+        if (this.isSmoked == true){
+            return `You are eating a smoked ${this.cheese}`;
+        } else {
+            return `You are eating ${this.cheese}`;
+        }    
+    }
+
 }
 
 module.exports = Cheese; 
