@@ -1,6 +1,7 @@
 //import classes
 const Fruit = require('../app/fruit');
 const Apple = require('../app/apple');
+const Cheese = require('../app/cheese');
 
 //Tests fruit.js
 describe('Fruit', () => {
@@ -53,6 +54,23 @@ describe('Apple', () => {
         expect(() => apple.setAmmount(-7)).toThrow('-7 is not a whole number greater than zero');
         
     });
+});
+
+//tests Cheese.js
+describe('Cheese', () => {
+    const consoleSpy = jest.spyOn(console, 'log');
+  
+    afterEach(() => {
+      consoleSpy.mockClear();
+    });
+
+    test('setAmmount will return a number if number is not a decimal or negative number', () => {
+        const muenster = new Cheese();
+        muenster.setCheese('muenster')
+
+        expect(muenster.getCheese()).toBe('muenster');
+    })
+
 });
 
 // describe('Book', () => {
